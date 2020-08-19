@@ -61,7 +61,8 @@
                           </label>
 
                           <button type="button"
-                                  class="width-35 pull-right btn btn-sm btn-primary">
+                                  class="width-35 pull-right btn btn-sm btn-primary"
+                                  @click="login()">
                             <i class="ace-icon fa fa-key"></i>
                             <span class="bigger-110">Login</span>
                           </button>
@@ -174,7 +175,14 @@
   $('body').attr('class', 'login-layout light-login');
   export default {
     name: 'login',
+    methods: {
+      login(){
+        this.$router.push("/admin")
+      }
+    }
   }
+
+
 </script>
 
 <style scoped>
