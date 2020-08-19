@@ -1,3 +1,4 @@
+
 <template>
   <div class="main-container">
     <div class="main-content">
@@ -28,14 +29,14 @@
                       <fieldset>
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input v-model="user.loginName" type="text" class="form-control" placeholder="Username"/>
+                            <input type="text" class="form-control" placeholder="Username"/>
                             <i class="ace-icon fa fa-user"></i>
                           </span>
                         </label>
 
                         <label class="block clearfix">
                           <span class="block input-icon input-icon-right">
-                            <input v-model="user.password" type="password" class="form-control" placeholder="Password"/>
+                            <input type="password" class="form-control" placeholder="Password"/>
                             <i class="ace-icon fa fa-lock"></i>
                           </span>
                         </label>
@@ -55,13 +56,12 @@
 
                         <div class="clearfix">
                           <label class="inline">
-                            <input v-model="remember" type="checkbox" class="ace"/>
+                            <input type="checkbox" class="ace"/>
                             <span class="lbl">Remember Me</span>
                           </label>
 
                           <button type="button"
-                                  class="width-35 pull-right btn btn-sm btn-primary"
-                                  v-on:click="login()">
+                                  class="width-35 pull-right btn btn-sm btn-primary">
                             <i class="ace-icon fa fa-key"></i>
                             <span class="bigger-110">Login</span>
                           </button>
@@ -170,6 +170,12 @@
 <!--    }-->
 <!--  }-->
 <!--</script>-->
+<script>
+  $('body').attr('class', 'login-layout light-login');
+  export default {
+    name: 'login',
+  }
+</script>
 
 <style scoped>
   .input-group-addon {

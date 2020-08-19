@@ -1,6 +1,7 @@
 import Vue from "vue"
 import Router from "vue-router"
 import Login from "./views/login.vue"
+import Admin from "./views/admin.vue"
 // import Admin from "../../../../Desktop/java big data atguigu /spring cloud + vue/视频/资料/course-online_20200414/admin(更多IT教程 www.itspxx.com)/src/views/admin.vue"
 // import Welcome from "../../../../Desktop/java big data atguigu /spring cloud + vue/视频/资料/course-online_20200414/admin(更多IT教程 www.itspxx.com)/src/views/admin/welcome.vue"
 // import Category from "../../../../Desktop/java big data atguigu /spring cloud + vue/视频/资料/course-online_20200414/admin(更多IT教程 www.itspxx.com)/src/views/admin/category.vue"
@@ -22,73 +23,83 @@ export default new Router({
     mode: "history",
     base: process.env.BASE_URL,
     routes: [{
-        path: "*",
+        path: '*',
         redirect: "/login",
-    }, {
-        path: "",
-        redirect: "/login",
-    }, {
-        path: "/login",
+    },{
+        path: '/login',
         component: Login
-    }, {
-        path: "/",
-        name: "admin",
-        component: Admin,
-        meta: {
-            loginRequire: true
-        },
-        children: [{
-            path: "welcome",
-            name: "welcome",
-            component: Welcome,
-        }, {
-            path: "business/category",
-            name: "business/category",
-            component: Category,
-        }, {
-            path: "business/course",
-            name: "business/course",
-            component: Course,
-        }, {
-            path: "business/chapter",
-            name: "business/chapter",
-            component: Chapter,
-        }, {
-            path: "business/section",
-            name: "business/section",
-            component: Section,
-        }, {
-            path: "business/content",
-            name: "business/content",
-            component: Content,
-        }, {
-            path: "business/teacher",
-            name: "business/teacher",
-            component: Teacher,
-        }, {
-            path: "business/member",
-            name: "business/member",
-            component: Member,
-        }, {
-            path: "business/sms",
-            name: "business/sms",
-            component: Sms,
-        }, {
-            path: "file/file",
-            name: "file/file",
-            component: File,
-        }, {
-            path: "system/user",
-            name: "system/user",
-            component: User,
-        }, {
-            path: "system/resource",
-            name: "system/resource",
-            component: Resource,
-        }, {
-            path: "system/role",
-            name: "system/role",
-            component: Role,
-        }]
+    },{
+        path: '/admin',
+        component: Admin
     }]
+    // routes: [{
+    //     path: "*",
+    //     redirect: "/login",
+    // }, {
+    //     path: "",
+    //     redirect: "/login",
+    // }, {
+    //     path: "/login",
+    //     component: Login
+    // }, {
+    //     path: "/",
+    //     name: "admin",
+    //     component: Admin,
+    //     meta: {
+    //         loginRequire: true
+    //     },
+    //     children: [{
+    //         path: "welcome",
+    //         name: "welcome",
+    //         component: Welcome,
+    //     }, {
+    //         path: "business/category",
+    //         name: "business/category",
+    //         component: Category,
+    //     }, {
+    //         path: "business/course",
+    //         name: "business/course",
+    //         component: Course,
+    //     }, {
+    //         path: "business/chapter",
+    //         name: "business/chapter",
+    //         component: Chapter,
+    //     }, {
+    //         path: "business/section",
+    //         name: "business/section",
+    //         component: Section,
+    //     }, {
+    //         path: "business/content",
+    //         name: "business/content",
+    //         component: Content,
+    //     }, {
+    //         path: "business/teacher",
+    //         name: "business/teacher",
+    //         component: Teacher,
+    //     }, {
+    //         path: "business/member",
+    //         name: "business/member",
+    //         component: Member,
+    //     }, {
+    //         path: "business/sms",
+    //         name: "business/sms",
+    //         component: Sms,
+    //     }, {
+    //         path: "file/file",
+    //         name: "file/file",
+    //         component: File,
+    //     }, {
+    //         path: "system/user",
+    //         name: "system/user",
+    //         component: User,
+    //     }, {
+    //         path: "system/resource",
+    //         name: "system/resource",
+    //         component: Resource,
+    //     }, {
+    //         path: "system/role",
+    //         name: "system/role",
+    //         component: Role,
+    //     }]
+    // }]
 })
