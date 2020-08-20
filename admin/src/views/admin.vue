@@ -368,7 +368,7 @@
                     <li class="active open">
                         <a href="#" class="dropdown-toggle">
                             <i class="menu-icon fa fa-list"></i>
-                            <span class="menu-text"> System Management </span>
+                            <span class="menu-text"> System </span>
 
                             <b class="arrow fa fa-angle-down"></b>
                         </a>
