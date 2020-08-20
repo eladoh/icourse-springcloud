@@ -2,6 +2,7 @@ import Vue from "vue"
 import Router from "vue-router"
 import Login from "./views/login.vue"
 import Admin from "./views/admin.vue"
+import Chapter from "./views/admin/chapter.vue"
 // import Admin from "../../../../Desktop/java big data atguigu /spring cloud + vue/视频/资料/course-online_20200414/admin(更多IT教程 www.itspxx.com)/src/views/admin.vue"
 // import Welcome from "../../../../Desktop/java big data atguigu /spring cloud + vue/视频/资料/course-online_20200414/admin(更多IT教程 www.itspxx.com)/src/views/admin/welcome.vue"
 // import Category from "../../../../Desktop/java big data atguigu /spring cloud + vue/视频/资料/course-online_20200414/admin(更多IT教程 www.itspxx.com)/src/views/admin/category.vue"
@@ -30,7 +31,11 @@ export default new Router({
         component: Login
     },{
         path: '/admin',
-        component: Admin
+        component: Admin,
+        children: [{
+            path: 'chapter',
+            component: Chapter,
+        }]
     }]
     // routes: [{
     //     path: "*",
