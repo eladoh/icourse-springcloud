@@ -9,6 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 
+
 @SpringBootApplication
 @EnableEurekaClient
 @MapperScan("com.course.server.mapper")
@@ -23,5 +24,6 @@ public class BusinessApplication {
 		LOG.info("Start success！！");
 		LOG.info("Business address: \thttp://127.0.0.1:{}", env.getProperty("server.port"));
 	}
+
 
 }
