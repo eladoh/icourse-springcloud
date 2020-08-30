@@ -151,8 +151,9 @@
                     page: page,
                     size: _this.$refs.pagination.size,
                 }).then((response)=>{
-                    _this.chapters = response.data.list;
-                    _this.$refs.pagination.render(page, response.data.total)
+                    let resp = response.data;
+                    _this.chapters = resp.content.list;
+                    _this.$refs.pagination.render(page, resp.content.total)
                 })
             },
 
