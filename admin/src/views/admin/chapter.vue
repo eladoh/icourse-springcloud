@@ -157,7 +157,7 @@
                         let resp = response.data;
                         if (resp.success) {
                             _this.list(1);
-                            // Toast.success("删除成功！");
+                            Toast.success("删除成功！");
                         }
                     })
                 });
