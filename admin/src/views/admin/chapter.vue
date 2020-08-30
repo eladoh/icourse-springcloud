@@ -93,7 +93,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Form</h4>
+                        <h4 class="modal-title">New</h4>
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal">
@@ -107,7 +107,7 @@
                                 <label class="col-sm-2 control-label">Course ID</label>
                                 <div class="col-sm-10">
 <!--                                    <p class="form-control-static">{{course.name}}</p>-->
-                                    <input class="form-control" placeholder="Course ID">
+                                    <input v-model="chapter.courseId" class="form-control" placeholder="Course ID">
                                 </div>
                             </div>
                         </form>
@@ -129,6 +129,7 @@
         components: {Pagination},
         data: function() {
             return {
+                chapter: {},
                 chapters: []
             }
         },
@@ -153,8 +154,31 @@
                     _this.chapters = response.data.list;
                     _this.$refs.pagination.render(page, response.data.total)
                 })
+            },
 
-            }
+            save(page) {
+                let _this = this;
+
+                // 保存校验
+                if (!Validator.require(_this.chapter.name, "名称")
+                    || !Validator.length(_this.chapter.courseId, "课程ID", 1, 8)) {
+                    return;
+                }
+                _this.chapter.courseId = _this.course.id;
+
+                Loading.show();
+                _this.$ajax.post(process.env.VUE_APP_SERVER + '/business/admin/chapter/save', _this.chapter).then((response)=>{
+                    Loading.hide();
+                    let resp = response.data;
+                    if (resp.success) {
+                        $("#form-modal").modal("hide");
+                        _this.list(1);
+                        Toast.success("保存成功！");
+                    } else {
+                        Toast.warning(resp.message)
+                    }
+                })
+            },
 
         }
     }
