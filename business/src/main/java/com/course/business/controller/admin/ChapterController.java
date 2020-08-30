@@ -1,9 +1,13 @@
 package com.course.business.controller.admin;
 
+import com.course.server.domain.Chapter;
 import com.course.server.dto.ChapterDto;
 import com.course.server.dto.PageDto;
 import com.course.server.dto.ResponseDto;
 import com.course.server.service.ChapterService;
+import com.course.server.util.CopyUtil;
+import com.course.server.util.UuidUtil;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +38,7 @@ public class ChapterController {
         responseDto.setContent(chapterDto);
         return responseDto;
     }
+
 }
 
 
