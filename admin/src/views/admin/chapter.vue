@@ -38,7 +38,7 @@
                         <i class="ace-icon fa fa-pencil bigger-120"></i>
                     </button>
 
-                    <button class="btn btn-xs btn-danger">
+                    <button v-on:click="del(chapter.id)" class="btn btn-xs btn-danger">
                         <i class="ace-icon fa fa-trash-o bigger-120"></i>
                     </button>
 
@@ -147,6 +147,22 @@
                     }
                 })
             },
+
+            del(id) {
+                let _this = this;
+                Confirm.show("Data deleted can't be retrieved. Confirm delete？", function () {
+                    // Loading.show();
+                    _this.$ajax.delete(process.env.VUE_APP_SERVER + '/business/admin/chapter/delete/' + id).then((response)=>{
+                        // Loading.hide();
+                        let resp = response.data;
+                        if (resp.success) {
+                            _this.list(1);
+                            // Toast.success("删除成功！");
+                        }
+                    })
+                });
+            },
+
 
         }
     }
