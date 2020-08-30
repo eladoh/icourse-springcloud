@@ -128,10 +128,10 @@
                 let _this = this;
 
                 // 保存校验
-                // if (!Validator.require(_this.chapter.name, "名称")
-                //     || !Validator.length(_this.chapter.courseId, "课程ID", 1, 8)) {
-                //     return;
-                // }
+                if (!Validator.require(_this.chapter.name, "name")
+                    || !Validator.length(_this.chapter.courseId, "course ID", 1, 8)) {
+                    return;
+                }
                 // _this.chapter.courseId = _this.course.id;
 
                 Loading.show();
@@ -141,7 +141,7 @@
                     if (resp.success) {
                         $("#form-modal").modal("hide");
                         _this.list(1);
-                        Toast.success("save sucess!");
+                        Toast.success("save success!");
                     } else {
                         Toast.warning(resp.message)
                     }
@@ -157,7 +157,7 @@
                         let resp = response.data;
                         if (resp.success) {
                             _this.list(1);
-                            Toast.success("删除成功！");
+                            Toast.success("delete success！");
                         }
                     })
                 });
