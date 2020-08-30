@@ -151,9 +151,9 @@
             del(id) {
                 let _this = this;
                 Confirm.show("Data deleted can't be retrieved. Confirm delete？", function () {
-                    // Loading.show();
+                    Loading.show();
                     _this.$ajax.delete(process.env.VUE_APP_SERVER + '/business/admin/chapter/delete/' + id).then((response)=>{
-                        // Loading.hide();
+                        Loading.hide();
                         let resp = response.data;
                         if (resp.success) {
                             _this.list(1);
