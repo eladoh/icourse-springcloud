@@ -25,6 +25,7 @@ public class GatewayApplication {
 		LOG.info("Gateway address: \thttp://127.0.0.1:{}", env.getProperty("server.port"));
 	}
 
+
 	@Bean
 	public CorsWebFilter corsFilter() {
 		CorsConfiguration config = new CorsConfiguration();
